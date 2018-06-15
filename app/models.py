@@ -1,5 +1,5 @@
 from app.database import Base
-from sqlalchemy import String, Integer, Column, Float
+from sqlalchemy import String, Integer, Column, Float, ForeignKey
 from flask_login import UserMixin
 
 
@@ -45,5 +45,5 @@ class Order(Base):
 
     id = Column(Integer, primary_key=True)
     status = Column(String)
-    user_id = Column(Integer)
-    offer_id = Column(Integer)
+    user_id = Column(Integer, ForeignKey('user.id'))
+    offer_id = Column(Integer, ForeignKey('offer.id'))
