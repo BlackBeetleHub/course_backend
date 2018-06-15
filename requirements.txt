@@ -5,3 +5,4 @@ flask_security
 jwt
 flask-login
 flask_wtf
+gunicorn==0.17.2
